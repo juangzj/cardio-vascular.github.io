@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingreso</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      /* Fondo gris claro para la página */
+    }
+
+    .bg-glass {
+      background-color: #ffffff;
+      /* Fondo blanco para el cuadro de texto */
+      border: 1px solid #dee2e6;
+      /* Borde gris claro */
+      backdrop-filter: saturate(200%) blur(25px);
+      border-radius: 8px;
+      /* Bordes redondeados */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      /* Sombra suave */
+    }
+
+    h1 {
+      color: #343a40;
+      /* Gris oscuro para el encabezado */
+    }
+
+    p {
+      color: #6c757d;
+      /* Gris medio para el texto */
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      /* Azul claro para el botón de ingresar */
+      border-color: #007bff;
+      /* Mismo color para el borde */
+    }
+
+    .btn-link {
+      color: #007bff;
+      /* Azul claro para el enlace de registro */
+    }
+
+    .btn-link:hover {
+      color: #0056b3;
+      /* Azul más oscuro en hover */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Section: Design Block -->
+  <section class="overflow-hidden">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight">
+            Un corazón sano es la clave <br />
+            <span style="color: #007bff"> para una vida plena</span>
+          </h1>
+
+          <p class="mb-4 opacity-70">
+            Recuerda que pequeños cambios en tu estilo de vida pueden hacer una gran diferencia.
+            Mantener una dieta balanceada, hacer ejercicio regularmente y controlar tus niveles de estrés son
+            clave para prevenir enfermedades cardiovasculares.
+          </p>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div class="card bg-glass">
+            <div class="card-body px-4 py-5 px-md-5">
+              <form><br><br><br><br>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example3" class="form-control" required />
+                  <label class="form-label" for="form3Example3">Correo</label>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4" class="form-control" required />
+                  <label class="form-label" for="form3Example4">Contraseña</label>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                  Ingresar
+                </button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>¿Aún no te has registrado?</p>
+                  <a href="registro.html" class="btn btn-link btn-floating mx-1">
+                    Regístrate aquí!
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+</body>
+
+</html>

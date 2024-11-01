@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Datos de Salud</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- Navbar con botón de Cerrar Sesión -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Registro de Datos de Salud</span>
+      <div class="ml-auto">
+        <button class="btn btn-danger" onclick="cerrarSesion()">Cerrar sesión</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Evaluación de Riesgo Cardiovascular (RCV)</h2>
+
+    <!-- Formulario para Datos de Salud -->
+    <div class="card mb-4">
+      <div class="card-header">Datos Personales y de Salud</div>
+      <div class="card-body">
+        <form id="formDatosSalud" onsubmit="calcularRCV(event)">
+          <div class="form-group">
+            <label for="peso">Peso (kg)</label>
+            <input type="number" class="form-control" id="peso" placeholder="Ingrese su peso en kilogramos" required>
+          </div>
+          <div class="form-group">
+            <label for="altura">Altura (cm)</label>
+            <input type="number" class="form-control" id="altura" placeholder="Ingrese su altura en centímetros" required>
+          </div>
+          <div class="form-group">
+            <label for="presion_sistolica">Presión Sistólica (mmHg)</label>
+            <select class="form-control" id="presion_sistolica" required>
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="110">110 mmHg</option>
+              <option value="120">120 mmHg</option>
+              <option value="130">130 mmHg</option>
+              <option value="140">140 mmHg</option>
+              <option value="150">150 mmHg</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="presion_diastolica">Presión Diastólica (mmHg)</label>
+            <select class="form-control" id="presion_diastolica" required>
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="70">70 mmHg</option>
+              <option value="80">80 mmHg</option>
+              <option value="90">90 mmHg</option>
+              <option value="100">100 mmHg</option>
+              <option value="110">110 mmHg</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="colesterol_hdl">Colesterol HDL (cHDL)</label>
+            <select class="form-control" id="colesterol_hdl" required>
+              <option value="" disabled selected>Seleccione el valor de colesterol HDL</option>
+              <option value="30">30 mg/dL</option>
+              <option value="40">40 mg/dL</option>
+              <option value="50">50 mg/dL</option>
+              <option value="60">60 mg/dL</option>
+              <option value="70">70 mg/dL</option>
+              <option value="80">80 mg/dL</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="colesterol_total">Colesterol Total (CT)</label>
+            <select class="form-control" id="colesterol_total" required>
+              <option value="" disabled selected>Seleccione el valor de colesterol total</option>
+              <option value="150">150 mg/dL</option>
+              <option value="180">180 mg/dL</option>
+              <option value="200">200 mg/dL</option>
+              <option value="220">220 mg/dL</option>
+              <option value="240">240 mg/dL</option>
+              <option value="260">260 mg/dL</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fuma">¿Fuma?</label>
+            <select class="form-control" id="fuma" required>
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="no_fuma">No fuma</option>
+              <option value="ocasionalmente">Fuma ocasionalmente</option>
+              <option value="regularmente">Fuma regularmente</option>
+              <option value="mucho">Fuma mucho</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="actividad_fisica">¿Realiza actividad física regularmente?</label>
+            <select class="form-control" id="actividad_fisica" required>
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="nunca">Nunca</option>
+              <option value="ocasionalmente">Ocasionalmente</option>
+              <option value="regularmente">Regularmente</option>
+            </select>
+          </div>
+
+          <!-- Datos personales -->
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" readonly>
+          </div>
+          <div class="form-group">
+            <label for="edad">Fecha de Nacimiento</label>
+            <input type="text" class="form-control" id="edad" readonly>
+          </div>
+          <div class="form-group">
+            <label for="genero">Género</label>
+            <input type="text" class="form-control" id="genero" readonly>
+          </div>
+
+          <!-- Botón para calcular el RCV -->
+          <button type="submit" class="btn btn-primary">Calcular RCV</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="alert alert-info mt-3" id="resultadoRCV" style="display: none;"></div>
+  </div>
+
+  <script>
+    function cerrarSesion() {
+      alert("Sesión cerrada");
+      window.location.href = "index.html";
+    }
+
+    function calcularRCV(event) {
+      event.preventDefault();
+      const peso = parseFloat(document.getElementById("peso").value);
+      const altura = parseFloat(document.getElementById("altura").value) / 100;
+      const presionSistolica = parseInt(document.getElementById("presion_sistolica").value);
+      const presionDiastolica = parseInt(document.getElementById("presion_diastolica").value);
+      const colesterolHDL = parseFloat(document.getElementById("colesterol_hdl").value);
+      const colesterolTotal = parseFloat(document.getElementById("colesterol_total").value);
+      const fuma = document.getElementById("fuma").value;
+
+      let riesgo = 0;
+
+      // Evaluación simplificada del riesgo
+      if (peso / (altura * altura) >= 30) riesgo += 1;
+      if (presionSistolica > 140 || presionDiastolica > 90) riesgo += 1;
+      if (colesterolHDL < 40) riesgo += 1; // Riesgo asociado a bajo HDL
+      if (colesterolTotal > 200) riesgo += 1; // Riesgo asociado a alto colesterol total
+      if (fuma === "ocasionalmente") riesgo += 0.5;
+      if (fuma === "regularmente" || fuma === "mucho") riesgo += 1;
+
+      const resultado = document.getElementById("resultadoRCV");
+      if (riesgo >= 3) {
+        resultado.textContent = "Alto riesgo de enfermedad cardiovascular. Consulte a un especialista.";
+        resultado.classList.replace("alert-info", "alert-danger");
+      } else {
+        resultado.textContent = "Bajo riesgo cardiovascular. Continúe con su estilo de vida saludable.";
+        resultado.classList.replace("alert-danger", "alert-info");
+      }
+      resultado.style.display = "block";
+    }
+
+    window.onload = function () {
+      document.getElementById("nombre").value = sessionStorage.getItem("nombre");
+      document.getElementById("edad").value = sessionStorage.getItem("edad");
+      document.getElementById("genero").value = sessionStorage.getItem("genero");
+    };
+  </script>
+</body>
+
+</html>

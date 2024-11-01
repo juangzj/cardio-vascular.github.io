@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Datos de Salud - Evaluación del Riesgo Cardiovascular</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    html,
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-container {
+      background-image: url('imgs/imagen-rcv.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 0px;
+      /* Ajustado a 0px para mover el navbar más a la izquierda */
+      color: #333;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .navbar .navbar-brand {
+      color: #333;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+
+    .navbar .navbar-brand i {
+      font-size: 1.5em;
+      color: #007bff;
+      margin-right: 10px;
+    }
+
+    .welcome-text {
+      max-width: 500px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+    }
+
+    .info-section {
+      padding: 50px 20px;
+      background-color: #f8f9fa;
+      width: 100%;
+      margin: 0;
+    }
+
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .btn-custom {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border-radius: 25px;
+      padding: 10px 20px;
+    }
+
+    .navbar-nav .nav-link {
+      margin-right: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .image-container {
+        padding-left: 0px;
+        /* Puedes ajustar este valor también si es necesario */
+      }
+
+      .welcome-text {
+        max-width: 600px;
+      }
+
+      .info-section {
+        padding: 70px 40px;
+      }
+
+      .info-section h2 {
+        font-size: 2em;
+      }
+
+      .info-section p {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="image-container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-heartbeat"></i> Riesgo Cardiovascular
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="login.html" class="btn btn-outline-primary mr-2">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a href="registro.html" class="btn btn-outline-success">Registrarte</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="welcome-text">
+      <h1>Conoce tu Riesgo Cardiovascular</h1>
+      <p>El riesgo cardiovascular puede cambiar tu vida. Aprende a gestionarlo para una vida saludable.</p>
+      <div class="d-flex">
+        <a href="#informacion" class="btn btn-custom mr-2">Saber más</a>
+        <a href="registro.html" class="btn btn-custom">Consultar tu Riesgo Cardiovascular</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="informacion" class="info-section">
+    <div class="container">
+      <h2>¿Qué es el Riesgo Cardiovascular?</h2>
+      <p>El riesgo cardiovascular es una medida de la probabilidad de que una persona desarrolle enfermedades del
+        corazón o de los vasos sanguíneos en el futuro. Tener un alto riesgo cardiovascular puede conducir a condiciones
+        graves como el infarto y el accidente cerebrovascular.</p>
+    </div>
+  </section>
+
+  <section id="factores" class="info-section">
+    <div class="container">
+      <h2>Factores de Riesgo</h2>
+      <p>Algunos factores que incrementan el riesgo cardiovascular incluyen:</p>
+      <ul>
+        <li><strong>Hipertensión</strong>: La presión arterial elevada daña los vasos sanguíneos y el corazón.</li>
+        <li><strong>Colesterol alto</strong>: El exceso de colesterol se acumula en las arterias, dificultando el flujo
+          sanguíneo.</li>
+        <li><strong>Diabetes</strong>: Las personas con diabetes tienen un mayor riesgo de enfermedades
+          cardiovasculares.</li>
+        <li><strong>Fumar</strong>: El tabaco estrecha las arterias y aumenta el riesgo de un infarto.</li>
+        <li><strong>Obesidad</strong>: El sobrepeso obliga al corazón a trabajar más intensamente.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="recomendaciones" class="info-section">
+    <div class="container">
+      <h2>Recomendaciones para Reducir el Riesgo</h2>
+      <p>Algunas recomendaciones para reducir el riesgo cardiovascular incluyen:</p>
+      <ul>
+        <li>Adoptar una dieta saludable, baja en grasas saturadas y rica en frutas y verduras.</li>
+        <li>Ejercitarse regularmente para mantener un peso saludable.</li>
+        <li>Evitar el consumo de tabaco y reducir el consumo de alcohol.</li>
+        <li>Controlar periódicamente la presión arterial y el colesterol.</li>
+        <li>Mantener los niveles de azúcar en sangre bajo control.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 Registro de Datos de Salud - Riesgo Cardiovascular</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
